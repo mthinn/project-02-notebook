@@ -25,42 +25,61 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <head>
+        <header>
             <h1>NOTEBOOK</h1>
-            <p>write your title and notes entry below. then click on the submit button</p>
-        </head>
+            <a href="../index.php">HOME</a> <a href="notes.php">notes</a>
+        </header>
 
-        <section class="note-hold">
-            <section class="link-holder">
+        <section class="notes-hold">
 
-            <form name="notesForm" action ="php/upload.php" onsubmit="return" method="post">
-
-                <p>
-                    <input type="text" name="title" id="title" placeholder="note Title">
-                </p>
-
-                <p>
-                  <textarea type="text" name="note" id="note" placeholder="your note entry"></textarea>
-
-                </p>
-                <input type="submit" id="submitbutton" value="submit note">
+            <?php
 
 
 
-                </form>
+              $title = mysqli_real_escape_string($db, $_POST['title']);
+              $note = mysqli_real_escape_string($db, $_POST['note']);
+
+              // insert user provided data from the from in index.php into the entry table in our database. we will do this using the sql seen below.
+              $note_insert = "INSERT INTO entry (title, note) VALUES ('$title', '$note')";
+
+              if (mysqli_query($db, $note_insert)){
+                echo '<br>DEBUG / success: notes add to database';
+              } else {
+                echo '<br>DEBUG / failed. could not execute because: ' . mysqli_error($db);
+              }
+
+              $db -> close();
 
 
-            </section>
+
+            ?>
 
 
         </section>
 
-           
+          </div>
 
-        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-        </div>
-    </body>
-</html>
+      </body>
+      </html?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

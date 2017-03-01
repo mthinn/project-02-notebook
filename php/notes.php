@@ -25,42 +25,59 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <head>
+        <header>
             <h1>NOTEBOOK</h1>
-            <p>write your title and notes entry below. then click on the submit button</p>
-        </head>
+            <a href="../index.php">HOME</a> <a href="notes.php">notes</a>
+        </header>
 
-        <section class="note-hold">
-            <section class="link-holder">
-
-            <form name="notesForm" action ="php/upload.php" onsubmit="return" method="post">
-
-                <p>
-                    <input type="text" name="title" id="title" placeholder="note Title">
-                </p>
-
-                <p>
-                  <textarea type="text" name="note" id="note" placeholder="your note entry"></textarea>
-
-                </p>
-                <input type="submit" id="submitbutton" value="submit note">
+        <section class="notes-hold">
 
 
+         <?php
 
-                </form>
+         // create variables to locate and pull data from the database
+         $squl = "SELECT id, title, note FROM entry";
+         $noteresult = $db -> query($squl);
 
 
-            </section>
+         if ($noteresult -> num_rows > 0) {
+            
+           while ($row = $noteresult -> fetch_assoc()){
+            echo '.<h1>Note #' . $row['title'] . '</h1><p>' . $row['note'] . '</p>';
+           }
+
+         } else {
+            echo 'no notes to display at this time';
+         }
+
+         // close our database connection
+         $db -> close();
+        
+
+         ?>
 
 
-        </section>
 
-           
 
-        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-        </div>
-    </body>
+</section>
+</div>
+</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
