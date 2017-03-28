@@ -1,12 +1,12 @@
 <?php
-    include_once 'dbconnect.php';
+    include_once 'dbconnect.php'; 
  ?>   
 <!DOCTYPE html>
 <html class="no-js" lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>persistent data storges</title>
+        <title>DREAMTIME NOTEBOOK</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,6 +16,8 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
 
@@ -26,8 +28,8 @@
 
         <!-- Add your site or application content here -->
         <head>
-            <h1>NOTEBOOK</h1>
-            <p>write your title and notes entry below. then click on the submit button</p>
+            <h1>DREAMTIME NOTEBOOK</h1>
+            <p> hello welcome to the dream time notebook where you can write all about your dreams or your greatest desires.write your title and notes entry below. then click on the submit button</p>
         </head>
 
         <section class="note-hold">

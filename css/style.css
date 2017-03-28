@@ -1,0 +1,19 @@
+body {
+  background-color:darkblue; 
+  text-align: center;
+  background-image:url(img/downlord.gif)
+
+}
+
+h1{
+	color: silver;
+	text-align: center;
+	table-layout: fixed;
+    font-family: fantasy
+}
+p {
+  color: orange;
+    text-align: center;
+ text-decoration-style: wavy;
+    font-family: fantasy
+}

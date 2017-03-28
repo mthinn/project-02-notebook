@@ -1,4 +1,4 @@
-<?php
+<?php 
     include_once 'dbconnect.php';
  ?>   
 <!DOCTYPE html>
@@ -16,6 +16,8 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
 
@@ -26,7 +28,7 @@
 
         <!-- Add your site or application content here -->
         <header>
-            <h1>NOTEBOOK</h1>
+            <h1>DREAMTIME NOTEBOOK</h1>
             <a href="../index.php">HOME</a> <a href="notes.php">notes</a>
         </header>
 
@@ -39,8 +41,7 @@
               $title = mysqli_real_escape_string($db, $_POST['title']);
               $note = mysqli_real_escape_string($db, $_POST['note']);
 
-              // insert user provided data from the from in index.php into the entry table in our database. we will do this using the sql seen below.
-              $note_insert = "INSERT INTO entry (title, note) VALUES ('$title', '$note')";
+              $note_insert = "INSERT INTO DreamNotes (title, note) VALUES ('$title', '$note')";
 
               if (mysqli_query($db, $note_insert)){
                 echo '<br>DEBUG / success: notes add to database';

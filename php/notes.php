@@ -1,5 +1,5 @@
 <?php
-    include_once 'dbconnect.php';
+    include_once 'dbconnect.php'; 
  ?>   
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -16,6 +16,8 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
 
@@ -26,7 +28,7 @@
 
         <!-- Add your site or application content here -->
         <header>
-            <h1>NOTEBOOK</h1>
+            <h1>DREAMTIME NOTEBOOK</h1>
             <a href="../index.php">HOME</a> <a href="notes.php">notes</a>
         </header>
 
@@ -35,8 +37,8 @@
 
          <?php
 
-         // create variables to locate and pull data from the database
-         $squl = "SELECT id, title, note FROM entry";
+         
+         $squl = "SELECT id, title, note FROM DreamNotes";
          $noteresult = $db -> query($squl);
 
 
@@ -50,7 +52,7 @@
             echo 'no notes to display at this time';
          }
 
-         // close our database connection
+         
          $db -> close();
         
 
